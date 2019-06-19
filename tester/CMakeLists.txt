@@ -53,7 +53,7 @@ bc_apply_compile_flags(SOURCE_FILES_CXX STRICT_OPTIONS_CPP STRICT_OPTIONS_CXX)
 
 add_executable(belcard_tester ${SOURCE_FILES_CXX} ${HEADER_FILES_CXX})
 set_target_properties(belcard_tester PROPERTIES LINKER_LANGUAGE CXX)
-#target_include_directories(belcard_tester PRIVATE ${BCTOOLBOX_TESTER_INCLUDE_DIRS})
+target_include_directories(belcard_tester PRIVATE ${BCTOOLBOX_INCLUDE_DIRS})
 target_link_libraries(belcard_tester belcard bctoolbox bctoolbox-tester)
 
 if(NOT IOS)

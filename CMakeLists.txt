@@ -21,7 +21,7 @@
 #
 ############################################################################
 
-cmake_minimum_required(VERSION 3.0)
+cmake_minimum_required(VERSION 3.1)
 project(BELCARD VERSION 1.0.2 LANGUAGES C CXX)
 
 set(BELCARD_SO_VERSION "1")
@@ -49,12 +49,7 @@ endif()
 
 find_package(belr REQUIRED CONFIG)
 
-if(LINPHONE_BUILDER_GROUP_EXTERNAL_SOURCE_PATH_BUILDERS)
-	set(BcToolbox_FIND_COMPONENTS tester)
-	include("${EP_bctoolbox_CONFIG_DIR}/BcToolboxConfig.cmake")
-else()
-	find_package(bctoolbox 0.0.3 REQUIRED OPTIONAL_COMPONENTS tester)
-endif()
+find_package(bctoolbox 0.0.3 REQUIRED OPTIONAL_COMPONENTS tester)
 
 if(UNIX AND NOT APPLE)
 	include(CheckIncludeFiles)
@@ -117,9 +112,11 @@ set(EXPORT_TARGETS_NAME "belcard")
 
 add_subdirectory(include)
 add_subdirectory(src)
-if(ENABLE_UNIT_TESTS AND BCTOOLBOX_TESTER_FOUND)
+
+if(ENABLE_UNIT_TESTS)
 	add_subdirectory(tester)
 endif()
+
 if(ENABLE_TOOLS)
 	add_subdirectory(tools)
 endif()
