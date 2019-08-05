@@ -23,7 +23,7 @@
 if(ENABLE_SHARED)
 	set(BELCARD_LIBRARIES_FOR_TOOLS belcard)
 else()
-	set(BELCARD_LIBRARIES_FOR_TOOLS belcard-static)
+	set(BELCARD_LIBRARIES_FOR_TOOLS belcard)
 endif()
 
 foreach(EXECTUABLE belcard-folder belcard-unfolder belcard-parser)

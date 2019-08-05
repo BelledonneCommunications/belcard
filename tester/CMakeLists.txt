@@ -23,7 +23,7 @@
 if(ENABLE_SHARED)
 	set(BELCARD_LIBRARIES_FOR_TESTER belcard)
 else()
-	set(BELCARD_LIBRARIES_FOR_TESTER belcard-static)
+	set(BELCARD_LIBRARIES_FOR_TESTER belcard)
 endif()
 
 set(VCARD_FILES
