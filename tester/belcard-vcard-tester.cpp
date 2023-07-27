@@ -153,5 +153,6 @@ test_suite_t vcard_test_suite = {
 	NULL,
 	NULL,
 	sizeof(tests) / sizeof(tests[0]),
-	tests
+	tests,
+	0
 };
